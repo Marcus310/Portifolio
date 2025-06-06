@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../fontes/Cinzel/CinzelDecorative-Regular.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'JonahAFYL';
+    src: url('../fontes/JonahAFYL-Light.ttf') format('truetype');
+    font-weight: noraml;
+}
+
+:root {
+
+    --preto1: #0f0e0e;
+    --preto2: #0b0909;
+    --preto3: #151515;
+    --preto4: #201f1f;
+    --branco1: #f8f8ff;
+    --branco2: #e0e0e3;
+    --branco3: #efeffa;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-titulos: 'Cinzel', Arial;
+    --fonte_titulo2: 'JonahAFYL', Arial;
+    --fonte_titulo3: 'Licorice', Arial;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--branco1);
+}
+
+nav {
+    position: relative;
+    z-index: 9999;
+}
+
+nav ul>li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav ul li a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: var(--preto1);
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--preto1);
+    transition: all 0.2s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav>ul {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    color: var(--preto1);
+    background-color: var(--branco2);
+    width: 100vw;
+}
+
+li>img {
+    height: 55px;
+    margin-left: 20px;
+    justify-content: left;
+}
+
+li:first-child {
+    margin-right: auto;
+}
+
+li {
+    font-family: var(--fonte_titulo2);
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+li:hover {
+    content: "";
+    bottom: 2;
+    text-decoration: underline;
+    transition: 0.5s all ease;
+}
+
+header {
+    background-image: url('../imagens/fundoHeader.jpg');
+    background-size: cover;
+    height: 85vh;
+    background-position: center center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    background: linear-gradient(to right, rgba(12, 12, 12, 0.900), rgba(19, 19, 19, 0.600), rgba(19, 19, 19, 0.400), rgba(19, 19, 19, 0.200), rgba(14, 14, 14, 0));
+    width: 100%;
+    height: 100%;
+}
+
+header h1 {
+    color: rgb(244, 239, 239);
+    font-size: 3.5rem;
+    font-family: var(--fonte-titulos);
+    font-weight: lighter;
+    margin-bottom: 30px;
+}
+
+header p {
+    font-size: clamp(1.1rem, 2.5vw, 2rem);
+    color: rgb(222, 158, 39);
+    font-weight: 600;
+    font-family: var(--fonte_titulo2);
+    max-width: 900px;
+}
+
+
+.galeria {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "foto1 foto2 foto3"
+        "foto4 foto2 foto6"
+        "foto7 foto2 foto9";
+    padding: 8px;
+    background-color: var(--branco1);
+    height: 900px;
+}
+
+#foto1 {
+    grid-area: foto1;
+    background-size: cover;
+    width: 100%;
+    background-image: url('../imagens/gridFotos/naturezaGridFotos.webp');
+    background-position: center center;
+}
+
+#foto2 {
+    grid-area: foto2;
+    background-size: cover;
+    width: 100%;
+    background-image: url('../imagens/gridFotos/urbanaGrid.webp');
+    background-position: center center;
+}
+
+#foto3 {
+    grid-area: foto3;
+    background-size: cover;
+    width: 100%;
+    background-image: url('../imagens/gridFotos/sombrasGrid.webp');
+    background-position: center;
+}
+
+#foto4 {
+    grid-area: foto4;
+    background-size: cover;
+    width: 100%;
+    background-image: url('../imagens/gridFotos/grid.webp');
+    background-position: center 85%;
+}
+
+#foto5 {
+    grid-area: foto5;
+    background-size: cover;
+    width: 100%;
+    background-image: url('../imagens/gridFotos/praiaGrid.webp');
+    background-position: center 40%;
+}
+
+#foto6 {
+    grid-area: foto6;
+    background-size: cover;
+    width: 100%;
+    background-image: url('../imagens/gridFotos/pordoSolGrid.webp');
+    background-position: center center;
+}
+
+#foto7 {
+    grid-area: foto7;
+    background-size: cover;
+    width: 100%;
+    background-image: url('../imagens/gridFotos/longaExposicaoGrid.webp');
+    background-position: center 40%;
+}
+
+#foto8 {
+    grid-area: foto8;
+    background-size: cover;
+    width: 100%;
+    background-image: url('../imagens/gridFotos/ceuEstreladoFaixa.webp');
+    background-position: center center;
+}
+
+#foto9 {
+    grid-area: foto9;
+    background-size: cover;
+    width: 100%;
+    background-image: url('../imagens/gridFotos/florestaPretoPrancoGrid.webp');
+    background-position: center 70%;
+}
+
+.fotoGaleria {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.fotoGaleria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fotoGaleria .overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(16, 14, 14, 0.678), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    color: white;
+}
+
+.fotoGaleria:hover .overlay {
+    background: linear-gradient(to top, rgba(202, 199, 199, 0.107), transparent);
+    transition: all 2.5s ease;
+}
+
+.fotoGaleria .overlay h3,
+.fotoGaleria .overlay p {
+    margin: 0;
+    font-family: var(--fonte-titulos);
+    font-weight: 300;
+}
+
+.fotoGaleria .overlay h3 {
+    font-size: 1.2rem;
+}
+
+.fotoGaleria .overlay p {
+    font-size: 1rem;
+    font-family: var(--fonte_titulo2);
+    margin-top: 10px;
+}
+
+.containerBotao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.verMais {
+    padding: 20px 40px;
+    border-radius: 25px;
+    font-size: 20px;
+    border: none;
+    text-decoration: underline;
+    background-color: #f8f8ff;
+    display: none;
+}
+
+aside>h2 {
+    display: flex;
+    margin: 10px 0px 3px;
+    padding: 25px 0px;
+    color: var(--preto1);
+    background-color: var(--preto4);
+    color: var(--branco1);
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte_titulo2);
+    font-weight: 400;
+}
+
+#fotoFaixa1 {
+    background-image: url('../imagens/instagramFaixa/florMacroFaixa.webp');
+    background-size: cover;
+    background-position: center center;
+}
+
+#fotoFaixa2 {
+    background-image: url('../imagens/instagramFaixa/florestaFaixa.webp');
+    background-size: cover;
+    background-position: center center;
+
+}
+
+#fotoFaixa3 {
+    background-image: url('../imagens/instagramFaixa/ceuPraiaFaixa.jpg');
+    background-size: cover;
+    background-position: center center;
+
+}
+
+#fotoFaixa4 {
+    background-image: url('../imagens/instagramFaixa/rosaInstaFaixa.webp');
+    background-size: cover;
+    background-position: center center;
+
+}
+
+#fotoFaixa5 {
+    background-image: url('../imagens/instagramFaixa/universo.webp');
+    background-size: cover;
+    background-position: center center;
+
+}
+
+#fotoFaixa6 {
+    background-image: url('../imagens/instagramFaixa/pordoSolFaixa.webp');
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.faixaFotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    background-color: var(--preto2);
+}
+
+.fotoFaixa {
+    flex: 1 1 200px;
+    height: 225px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.fotoFaixa:hover {
+    transform: scale(0.92);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.388);
+}
+
+.fotoFaixa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.faixaFotos a {
+    text-decoration: none;
+    flex: 1 1 200px;
+    max-width: 100%;
+}
+
+.footer>p {
+    font-size: 13px;
+    margin: 10px 0px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: var(--branco1);
+    color: var(--preto2);
+    font-family: var(--fonte-padrao);
+    text-align: center;
+}
+
+
+.footer {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+.footer p {
+    margin: 0;
+}
+
+.footerCopy {
+    flex: 1;
+    text-align: left;
+}
+
+.links {
+    flex: 1;
+    text-align: right;
+}
+
+.footer a {
+    color: white;
+    margin-left: 8px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer img.icon {
+    height: 35px;
+    vertical-align: middle;
+}
+
+.footer img.icon:hover {
+    transform: scale(1.30);
+    transition: 0.5s all ease;
+}
+
+
+@media(max-width: 768px) {
+    header p {
+        font-size: 1.5rem;
+        margin: 30px 0px 100px 25px;
+    }
+
+    header h1 {
+        margin: 80px 0px 20px 25px;
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-rows: repeat(5, 250px);
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "foto1 foto2"
+            "foto3 foto4"
+            "foto5 foto6"
+            "foto7 foto8"
+            "foto9 foto9";
+        height: 100%;
+    }
+
+    .faixaFotos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .fotoFaixa {
+        background-size: cover;
+        background-position: center;
+        height: 150px;
+    }
+
+    .footer>.links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer .links {
+        margin: 0 auto 10px;
+    }
+
+    .footer img.icon:hover {
+        transform: scale(1.30);
+        transition: 0.5s all ease;
+    }
+
+}
